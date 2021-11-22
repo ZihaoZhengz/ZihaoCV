@@ -1,2 +1,2 @@
 Flask==2.0.2
-guicorn
+guicorn==20.1.0
