@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" , href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" , href="{{ url_for('static', filename='style.css') }}">
+    <title>CV</title>
+
+    <!-- use th jquery to make the button disappear and corresponding content appear-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".edu").click(function () {
+                $(".edu1").removeClass("d-none")
+                $(".edu").remove()
+            });
+
+            $(".work").click(function () {
+                $(".job1").removeClass("d-none")
+                $(".work").remove()
+            });
+        });
+    </script>
+</head>
+
+
+<body>
+    <div class="text-center">
+        <img src="{{ url_for('static', filename='visa.jpg') }}" class="rounded img">
+    </div>
+    <div class="d-flex justify-content-center"><b>Name:</b> &nbsp;Zihao Zheng</div>
+    <div class="d-flex justify-content-center"><b>Gender:</b> &nbsp;Male</div>
+    <div class=" d-flex justify-content-center"><b>Date of Birth:</b> &nbsp;September 20th, 1996</div>
+    <div class="d-flex justify-content-center"><b>Place of Birth:</b> &nbsp;Shangrao City, Jiangxi Province, China</div>
+    <div class=" d-flex justify-content-center"><b>Address:</b> &nbsp;575 South Negley Ave, Apt18</div>
+    <div class="d-flex justify-content-center"><b>Mobile Phone:</b> &nbsp;1-4123200111</div>
+    <div class=" d-flex justify-content-center"><b>E-mail:</b> &nbsp;zihaozhe@andrew.cmu.edu</div>
+    <div class=" d-flex justify-content-center"><b>Hobbies:</b>&nbsp; Basketball, Swimming, and WorkOut</div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 text-center">
+                <button class="btn btn-light edu">Education experience</button>
+                <div class="d-flex justify-content-center d-none edu1 fs-3">Education Experience</div>
+                <div class=" d-flex justify-content-center d-none edu1">
+                    {{edu[0]}} &nbsp;&nbsp;&nbsp;&nbsp; {{time[0]}}<br>
+                    {{edu[1]}} &nbsp;&nbsp;&nbsp;&nbsp; {{time[1]}} <br>
+                    {{edu[2]}} &nbsp;&nbsp;&nbsp;&nbsp; {{time[2]}}
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <button class="btn btn-light work">work experience</button>
+                <div class="d-flex justify-content-center d-none job1 fs-3">Education Experience</div>
+                <div class=" d-flex justify-content-center d-none job1">
+                    {{job[0]}} &nbsp;&nbsp;&nbsp;&nbsp; {{job[1]}}<br>{{job[2]}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" d-flex justify-content-center align-bottom"><button class="btn btn-primary  align-bottom target">Change
+            bgColor</button>
+        <script src="/static/style.js"></script>
+</body>
+
+</html>
