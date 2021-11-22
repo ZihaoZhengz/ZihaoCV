@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return "Wanna get my CV? Please enter the url: localhost:5000/getCV"
+    return "Wanna get my CV? Please add /getCV to the url"
 @app.route("/getCV")
 # pass the value to index.html
 def getCV():
